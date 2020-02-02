@@ -1,5 +1,5 @@
-stepDefinitions\Steps.class
-pageObjects\VerifyBuild.class
 pageObjects\LoginPage.class
 testRunner\TestRun.class
 stepDefinitions\BaseClass.class
+stepDefinitions\Steps.class
+pageObjects\VerifyBuild.class

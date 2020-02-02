@@ -1,33 +1,66 @@
 package stepDefinitions;
 
+import java.io.FileInputStream;
+import java.io.IOException;
+import java.util.Properties;
+
+import org.apache.log4j.PropertyConfigurator;
 import org.junit.Assert;
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.firefox.FirefoxDriver;
+import org.openqa.selenium.ie.InternetExplorerDriver;
 
+import cucumber.api.java.Before;
 import cucumber.api.java.en.*;
 import junit.framework.*;
 import pageObjects.LoginPage;
 import pageObjects.VerifyBuild;
 
 public class Steps extends BaseClass {
-	
+    @Before
+	public void setup() throws IOException, InterruptedException{
+    	
+    	configProp = new Properties();
+    	FileInputStream configPropfile=new FileInputStream("config.properties");
+    	configProp.load(configPropfile);
+    	
+    	logger=logger.getLogger("actiTIME");
+		PropertyConfigurator.configure("Log4j.properties");
+		String br=configProp.getProperty("browser");
+		if(br.equals("chrome")){
+			
+		System.setProperty("webdriver.chrome.driver",configProp.getProperty("chromepath"));
+		
+		
+		driver = new ChromeDriver();
+		}else if(br.equals("firefox")){
+			System.setProperty("webdriver.gecko.driver",configProp.getProperty("firefoxpath"));
+			driver = new FirefoxDriver();
+		}else if(br.equals("ie")){
+Thread.sleep(3000);
+			System.setProperty("webdriver.ie.driver",configProp.getProperty("iepath"));
+			driver = new InternetExplorerDriver();
+		}
+		logger.info("******Opening Browsers******");
+		driver.manage().window().maximize();
+    }
 	@Given("^User Launch Chrome Browser$")
 	public void user_Launch_Chrome_Browser() {
-		System.setProperty("webdriver.chrome.driver", System.getProperty("user.dir")+"./Drivers/chromedriver.exe");
-		driver= new ChromeDriver();
+		
 		lp=new LoginPage(driver);
-		driver.manage().window().maximize();
+		
 	}
 
 	@When("^User Opens the URL \"([^\"]*)\"$")
 	public void user_Opens_the_URL(String url) {
-		
+		logger.info("******Entering the URL******");
 		driver.get(url);
 		
 	}
 
 	@When("^User Enters Username as \"([^\"]*)\" and Password as \"([^\"]*)\"$")
 	public void user_Enters_Username_as_and_Password_as(String uname, String pwd) {
-		
+		logger.info("******Providing User name and Password******");
 		lp.setUsername(uname);
 		lp.setPassword(pwd);
 	}
@@ -36,6 +69,7 @@ public class Steps extends BaseClass {
 	public void users_click_on_login() throws InterruptedException {
 	lp.clickLoginButton();
 	Thread.sleep(3000);
+	logger.info("******Click on Login Button******");
 	}
 
 	@Then("^Page url should be \"([^\"]*)\"$")
@@ -59,7 +93,7 @@ public class Steps extends BaseClass {
 			System.out.println(driver.getCurrentUrl());
 			System.out.println("*********************");
 			Assert.assertEquals(url, driver.getCurrentUrl());
-			
+			logger.info("******Asserting the title******");
 			
 		}
 		
@@ -71,11 +105,13 @@ public class Steps extends BaseClass {
 		
 		lp.clickLogoutlink();
 		Thread.sleep(3000);
+		logger.info("******Click logout******");
 	}
 
 	@Then("^Close the browser$")
 	public void close_the_browser() {
 		driver.close();
+		logger.info("******Close the browser******");
 	}
 
 // Verify the build number
@@ -86,6 +122,7 @@ public class Steps extends BaseClass {
 		vb= new VerifyBuild(driver);
 		vb.clickHelpicon();
 		Thread.sleep(3000);
+		logger.info("****Click on help icon******");
 		
 	}
 
@@ -93,6 +130,7 @@ public class Steps extends BaseClass {
 	public void click_on_about_actiTime(){
 		
 		vb.clickaboutactiTime();
+		logger.info("******Click on about actitime link******");
 	}
 
 	@Then("^Verify the build number$")
@@ -101,12 +139,13 @@ public class Steps extends BaseClass {
 		Assert.assertEquals("(build 21009),",vb.getBuildnumber());
 		
 
-	
+		logger.info("******Asserting the build number******");
 	}
 
 	@Then("^Click on close$")
 	public void click_on_close() {
 		vb.clickClose();
+		logger.info("******Close the build pop up******");
 	}
 
 

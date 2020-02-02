@@ -1,0 +1,33 @@
+2020-02-02 20:43:12,105 - actiTIME -INFO - ******Opening Browsers******
+2020-02-02 20:43:16,571 - actiTIME -INFO - ******Entering the URL******
+2020-02-02 20:43:17,590 - actiTIME -INFO - ******Providing User name and Password******
+2020-02-02 20:43:21,037 - actiTIME -INFO - ******Click on Login Button******
+2020-02-02 20:43:25,217 - actiTIME -INFO - ****Click on help icon******
+2020-02-02 20:43:25,332 - actiTIME -INFO - ******Click on about actitime link******
+2020-02-02 20:43:25,379 - actiTIME -INFO - ******Asserting the build number******
+2020-02-02 20:43:25,561 - actiTIME -INFO - ******Close the build pop up******
+2020-02-02 20:43:29,694 - actiTIME -INFO - ******Close the browser******
+2020-02-02 20:43:35,205 - actiTIME -INFO - ******Opening Browsers******
+2020-02-02 20:43:39,339 - actiTIME -INFO - ******Entering the URL******
+2020-02-02 20:43:40,171 - actiTIME -INFO - ******Providing User name and Password******
+2020-02-02 20:43:43,493 - actiTIME -INFO - ******Click on Login Button******
+2020-02-02 20:43:43,594 - actiTIME -INFO - ******Asserting the title******
+2020-02-02 20:43:46,843 - actiTIME -INFO - ******Click logout******
+2020-02-02 20:43:46,919 - actiTIME -INFO - ******Asserting the title******
+2020-02-02 20:43:47,126 - actiTIME -INFO - ******Close the browser******
+2020-02-02 20:43:52,567 - actiTIME -INFO - ******Opening Browsers******
+2020-02-02 20:43:56,746 - actiTIME -INFO - ******Entering the URL******
+2020-02-02 20:43:57,767 - actiTIME -INFO - ******Providing User name and Password******
+2020-02-02 20:44:01,233 - actiTIME -INFO - ******Click on Login Button******
+2020-02-02 20:44:01,338 - actiTIME -INFO - ******Asserting the title******
+2020-02-02 20:44:04,847 - actiTIME -INFO - ******Click logout******
+2020-02-02 20:44:04,874 - actiTIME -INFO - ******Asserting the title******
+2020-02-02 20:44:05,074 - actiTIME -INFO - ******Close the browser******
+2020-02-02 20:44:10,550 - actiTIME -INFO - ******Opening Browsers******
+2020-02-02 20:44:14,681 - actiTIME -INFO - ******Entering the URL******
+2020-02-02 20:44:15,471 - actiTIME -INFO - ******Providing User name and Password******
+2020-02-02 20:44:18,769 - actiTIME -INFO - ******Click on Login Button******
+2020-02-02 20:44:18,879 - actiTIME -INFO - ******Asserting the title******
+2020-02-02 20:44:22,131 - actiTIME -INFO - ******Click logout******
+2020-02-02 20:44:22,212 - actiTIME -INFO - ******Asserting the title******
+2020-02-02 20:44:22,441 - actiTIME -INFO - ******Close the browser******
